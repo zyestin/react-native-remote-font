@@ -8,37 +8,66 @@
  * https://github.com/facebook/react-native
  */
 
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import RemoteFontLoader from 'react-native-remote-font';
+import React, { useState } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import ArtText from "react-native-remote-font";
 
-export default class App extends Component<{}> {
-  state = {
-    status: 'starting',
-    message: '--'
-  };
-  componentDidMount() {
+const App = () => {
+  const [fontInfoIndex, setFontInfoIndex] = useState(0);
 
-    console.log('RemoteFontLoader:', RemoteFontLoader);
+  return (
+    <View style={{ flex: 1, paddingTop: 100, paddingLeft: 20 }}>
+      <TouchableOpacity
+        style={{
+          padding: 10,
+          backgroundColor: "pink",
+          width: 100,
+          alignItems: "center",
+        }}
+        onPress={() => {
+          setFontInfoIndex((fontInfoIndex + 1) % fontInfoList.length);
+        }}
+      >
+        <Text>{"Switch Font"}</Text>
+      </TouchableOpacity>
+      <Text style={{ marginVertical: 20 }}>
+        {"Current font - " +
+          fontInfoIndex +
+          " - " +
+          fontInfoList[fontInfoIndex].fontName}
+      </Text>
 
-    RemoteFontLoader.sampleMethod('Testing', 123, (message) => {
-      this.setState({
-        status: 'native callback received',
-        message
-      });
-    });
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>☆RemoteFontLoader example☆</Text>
-        <Text style={styles.instructions}>STATUS: {this.state.status}</Text>
-        <Text style={styles.welcome}>☆NATIVE CALLBACK MESSAGE☆</Text>
-        <Text style={styles.instructions}>{this.state.message}</Text>
-      </View>
-    );
-  }
+      <ArtText
+        text="Hello World"
+        style={{ fontSize: 20, fontVariant: ["proportional-nums"] }}
+        fontInfo={fontInfoList[fontInfoIndex]}
+      />
+    </View>
+  );
 }
+
+export default App;
+
+
+const fontInfoList = [
+  {
+    fontName: "Ma Shan Zheng",
+    fontUrl: "https://fonts.gstatic.com/s/mashanzheng/v10/NaPecZTRCLxvwo41b4gvzkXaRMHsCoRTJKKTqxFXqIji1hn3wSpSEA3eSpJy0awdsFt2Zfc6SSE.119.woff2",
+  },
+  {
+    fontName: "Afacad",
+    fontUrl: "https://fonts.gstatic.com/s/afacad/v1/6NUI8FKMIQOGaw6ahLYEvBjUVG5Ga92uVSQ-9kKlZfNfuw.ttf",
+  },
+  {
+    fontName: "Rubik Bubbles",
+    fontUrl:
+      "https://fonts.gstatic.com/s/rubikbubbles/v3/JIA1UVdwbHFJtwA7Us1BPFbRNTENfDxyRXI.ttf",
+  },
+  {
+    fontName: "Preahvihear",
+    fontUrl: "https://fonts.gstatic.com/s/preahvihear/v29/6NUS8F-dNQeEYhzj7uluxswE49FJf8Wv.ttf",
+  },
+];
 
 const styles = StyleSheet.create({
   container: {
