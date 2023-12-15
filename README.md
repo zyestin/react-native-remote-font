@@ -54,3 +54,7 @@ If you meet some error like package link, try to find the solution here https://
 ## License
 
 MIT
+
+## Thanks
+
+* [create-react-native-module](https://github.com/brodybits/create-react-native-module)
