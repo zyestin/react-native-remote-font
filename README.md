@@ -32,18 +32,21 @@ import ArtText from "react-native-remote-font";
 
 ## Props
 
+Passthrough the properties of all Text components, such as text, style, etc. 
+
 | Prop | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| text | string |  | Text to be rendered |
-| style | object |  | Style to be applied to text |
-| fontInfo | object |  | Font information |
 | fontInfo.fontName | string |  | Font name |
 | fontInfo.fontUrl | string |  | Font download web url |
 
 
 ## run example
 
+* android
 `$ cd example && yarn && yarn start && yarn android`
+
+* ios
+`$ cd example && yarn && yarn start && yarn ios`
 
 If you meet some error like package link, try to find the solution here https://zyestin.github.io/zyestin/posts/rn/create-npm-lib/
 
