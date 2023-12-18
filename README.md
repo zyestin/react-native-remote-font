@@ -3,6 +3,8 @@
 Easy way for text component to apply custom remote font.   
 Just tell the component the font's name and url.
 
+[![](https://zyestin.github.io/zyestin/posts/rn/art-text/media/17016760060792/font-down-apply-1.gif)](https://zyestin.github.io/zyestin/posts/rn/art-text/)
+
 ## Why?
 
 - No need to worry about font's download, cache, load.  
