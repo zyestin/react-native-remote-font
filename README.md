@@ -3,7 +3,7 @@
 Easy way for text component to apply custom remote font.   
 Just tell the component the font's name and url.
 
-[![](https://zyestin.github.io/zyestin/posts/rn/art-text/media/17016760060792/font-down-apply-1.gif)](https://zyestin.github.io/zyestin/posts/rn/art-text/)
+[![effect](https://zyestin.github.io/art-text/media/17016760060792/font-down-apply-1.gif)](https://zyestin.github.io/art-text/)
 
 ## Why?
 
@@ -50,7 +50,7 @@ Passthrough the properties of all Text components, such as text, style, etc.
 * ios
 `$ cd example && yarn && yarn start && yarn ios`
 
-If you meet some error like package link, try to find the solution here https://zyestin.github.io/zyestin/posts/rn/create-npm-lib/
+If you meet some error like package link, try to find the solution here https://zyestin.github.io/create-npm-lib/#%E8%BF%90%E8%A1%8C-android%E6%8C%BA%E5%9D%91
 
 
 ## License
